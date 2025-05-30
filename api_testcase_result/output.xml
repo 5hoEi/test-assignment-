@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-30T11:18:35.678003" rpa="false" schemaversion="5">
+<suite id="s1" name="Api" source="G:\test-assigment\test-assignment\robotframework\testcases\api">
+<suite id="s1-s1" name="Test Assigment3 01" source="G:\test-assigment\test-assignment\robotframework\testcases\api\test_assigment3_01.robot">
+<test id="s1-s1-t1" name="TC01" line="5">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-30T11:18:36.235153" level="INFO">${hearders} = {'x-api-key': 'reqres-free-v1'}</msg>
+<var>${hearders}</var>
+<arg>x-api-key=reqres-free-v1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.234942" elapsed="0.000245"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-05-30T11:18:36.381346" level="INFO">GET Request : url=https://reqres.in/api/users/12 
+ path_url=/api/users/12 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-api-key': 'reqres-free-v1'} 
+ body=None 
+ </msg>
+<msg time="2025-05-30T11:18:36.381460" level="INFO">GET Response : url=https://reqres.in/api/users/12 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 30 May 2025 04:18:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cf-Ray': '947b6dbe0b29f8cc-SIN', 'Server': 'cloudflare', 'Content-Encoding': 'gzip', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748578032&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=cQhxLpjilg7GN1QpR0v8oi6XCXWANSf8mYxs9ZdbB%2BI%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1748578032&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=cQhxLpjilg7GN1QpR0v8oi6XCXWANSf8mYxs9ZdbB%2BI%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Limit': '100', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '60', 'Etag': 'W/"156-dRpOqAStViWxQQvYl7n1A1GXGFw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'Cf-Cache-Status': 'HIT', 'Age': '686', 'Vary': 'Accept-Encoding', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=29588&amp;min_rtt=29082&amp;rtt_var=11267&amp;sent=6&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2837&amp;recv_bytes=798&amp;delivery_rate=140292&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=208ed40e1f0278df&amp;ts=46&amp;x=0"'} 
+ body={"data":{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}} 
+ </msg>
+<msg time="2025-05-30T11:18:36.381560" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>https://reqres.in/api/users/12</arg>
+<arg>headers=${hearders}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.235418" elapsed="0.146163"/>
+</kw>
+<kw name="Check response all key should match with expected value" owner="api_feature">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-30T11:18:36.382866" level="INFO">['id', 'email', 'first_name', 'last_name', 'avatar']</msg>
+<arg>${keys_check}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.382753" elapsed="0.000149"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-30T11:18:36.383310" level="INFO">${range} = 5</msg>
+<var>${range}</var>
+<arg>len(${keys_check})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.383003" elapsed="0.000328"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json}[data][${keys_check}[${index}]]</arg>
+<arg>${checked_value[${index}]}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.383608" elapsed="0.000411"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-05-30T11:18:36.383520" elapsed="0.000538"/>
+</iter>
+<iter>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json}[data][${keys_check}[${index}]]</arg>
+<arg>${checked_value[${index}]}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.384214" elapsed="0.000376"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-05-30T11:18:36.384134" elapsed="0.000495"/>
+</iter>
+<iter>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json}[data][${keys_check}[${index}]]</arg>
+<arg>${checked_value[${index}]}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.384771" elapsed="0.000343"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-05-30T11:18:36.384692" elapsed="0.000508"/>
+</iter>
+<iter>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json}[data][${keys_check}[${index}]]</arg>
+<arg>${checked_value[${index}]}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.385563" elapsed="0.000675"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-05-30T11:18:36.385409" elapsed="0.000894"/>
+</iter>
+<iter>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json}[data][${keys_check}[${index}]]</arg>
+<arg>${checked_value[${index}]}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.386481" elapsed="0.000422"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-05-30T11:18:36.386390" elapsed="0.000556"/>
+</iter>
+<var>${index}</var>
+<value>${range}</value>
+<status status="PASS" start="2025-05-30T11:18:36.383388" elapsed="0.003604"/>
+</for>
+<arg>${response.json()}</arg>
+<arg>${api_test_data.TC01.keys_value}</arg>
+<arg>${api_test_data.TC01.checked_value}</arg>
+<status status="PASS" start="2025-05-30T11:18:36.381914" elapsed="0.005156"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:18:36.233848" elapsed="0.153434"/>
+</test>
+<status status="PASS" start="2025-05-30T11:18:35.697033" elapsed="0.690749"/>
+</suite>
+<suite id="s1-s2" name="Test Assigment3 02" source="G:\test-assigment\test-assignment\robotframework\testcases\api\test_assigment3_02.robot">
+<test id="s1-s2-t1" name="TC02" line="5">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-30T11:18:36.400086" level="INFO">${hearders} = {'x-api-key': 'reqres-free-v1'}</msg>
+<var>${hearders}</var>
+<arg>x-api-key=reqres-free-v1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.399935" elapsed="0.000186"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-05-30T11:18:36.851452" level="INFO">GET Request : url=https://reqres.in/api/users/1234 
+ path_url=/api/users/1234 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-api-key': 'reqres-free-v1'} 
+ body=None 
+ </msg>
+<msg time="2025-05-30T11:18:36.851589" level="INFO">GET Response : url=https://reqres.in/api/users/1234 
+ status=404, reason=Not Found 
+ headers={'Date': 'Fri, 30 May 2025 04:18:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Vary': 'Accept-Encoding', 'Cf-Ray': '947b6dbedaab919b-SIN', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748578718&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=JmjC666Z36pReJnZUJl%2B0CMLSw6qQ%2F4U%2FmK7N5jiekc%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1748578718&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=JmjC666Z36pReJnZUJl%2B0CMLSw6qQ%2F4U%2FmK7N5jiekc%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Limit': '100', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '60', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'Cf-Cache-Status': 'EXPIRED', 'Content-Encoding': 'gzip', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=30091&amp;min_rtt=29593&amp;rtt_var=11453&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2837&amp;recv_bytes=800&amp;delivery_rate=137870&amp;cwnd=245&amp;unsent_bytes=0&amp;cid=693da6c0aff678d3&amp;ts=388&amp;x=0"'} 
+ body={} 
+ </msg>
+<msg time="2025-05-30T11:18:36.851926" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<var>${response}</var>
+<arg>https://reqres.in/api/users/1234</arg>
+<arg>headers=${hearders}</arg>
+<arg>expected_status=404</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.400291" elapsed="0.451673"/>
+</kw>
+<kw name="Check response should be empty json" owner="api_feature">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>${response} == "{}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-30T11:18:36.853331" elapsed="0.000248"/>
+</kw>
+<arg>${response.json()}</arg>
+<status status="PASS" start="2025-05-30T11:18:36.852468" elapsed="0.001304"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:18:36.399419" elapsed="0.454629"/>
+</test>
+<status status="PASS" start="2025-05-30T11:18:36.388459" elapsed="0.466176"/>
+</suite>
+<status status="PASS" start="2025-05-30T11:18:35.679039" elapsed="1.176168"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Api" id="s1" pass="2" fail="0" skip="0">Api</stat>
+<stat name="Test Assigment3 01" id="s1-s1" pass="1" fail="0" skip="0">Api.Test Assigment3 01</stat>
+<stat name="Test Assigment3 02" id="s1-s2" pass="1" fail="0" skip="0">Api.Test Assigment3 02</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

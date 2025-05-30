@@ -1,0 +1,13 @@
+mobile_data:
+  TC01:
+    title: TestNote01
+  TC02:
+    title: ""
+  TC03:
+    title: TestNote03
+    new_title: New_TestNote03
+  TC04:
+    title: TestNote04
+    new_title: ""
+  TC05:
+    title: TestNote05

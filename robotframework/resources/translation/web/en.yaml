@@ -1,0 +1,9 @@
+login_page:
+  popup_logout: You logged out of the secure area!
+  lbl_login_header: Login Page
+  lbl_login: Login
+  popup_invalid_password: Your password is invalid!
+  popup_invalid_username: Your username is invalid!
+secure_page:
+  popup_login: You logged into a secure area!
+  lbl_logout: Logout

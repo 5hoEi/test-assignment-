@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-30T11:34:44.864380" rpa="false" schemaversion="5">
+<suite id="s1" name="Web" source="G:\test-assigment\test-assignment\robotframework\testcases\web">
+<suite id="s1-s1" name="Test-Assigment2 01" source="G:\test-assigment\test-assignment\robotframework\testcases\web\test-assigment2_01.robot">
+<test id="s1-s1-t1" name="TC01 Login successful with valid username password" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-30T11:34:45.393530" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>url=${test_web_url}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-30T11:34:45.393315" elapsed="5.496722"/>
+</kw>
+<kw name="Verify login page is loaded and visible" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_locator.lbl_login_page}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:50.891986" elapsed="0.065604"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_locator.lbl_login_form}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:50.957754" elapsed="0.009387"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:50.891554" elapsed="0.075673"/>
+</kw>
+<kw name="Input username" owner="login_page">
+<kw name="Input text to element when element is visible" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:50.968540" elapsed="0.009960"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:34:50.978832" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>${locator}</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:34:50.978651" elapsed="0.055543"/>
+</kw>
+<arg>${login_locator.txt_username}</arg>
+<arg>${username}</arg>
+<doc>This keyword will be use for input text to an element that need sometime to load
+To prevent flaky by robot trying to input</doc>
+<status status="PASS" start="2025-05-30T11:34:50.967962" elapsed="0.066327"/>
+</kw>
+<arg>${TC01.username}</arg>
+<status status="PASS" start="2025-05-30T11:34:50.967464" elapsed="0.066873"/>
+</kw>
+<kw name="Input password" owner="login_page">
+<kw name="Input text to element when element is visible" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.035462" elapsed="0.011077"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:34:51.046896" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>${locator}</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.046711" elapsed="0.073005"/>
+</kw>
+<arg>${login_locator.txt_password}</arg>
+<arg>${password}</arg>
+<doc>This keyword will be use for input text to an element that need sometime to load
+To prevent flaky by robot trying to input</doc>
+<status status="PASS" start="2025-05-30T11:34:51.035106" elapsed="0.084707"/>
+</kw>
+<arg>${TC01.password}</arg>
+<status status="PASS" start="2025-05-30T11:34:51.034599" elapsed="0.085260"/>
+</kw>
+<kw name="Click login button" owner="login_page">
+<kw name="Click element when element is visble" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.121004" elapsed="0.012192"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:34:51.133525" level="INFO">Clicking element 'xpath=//button/i[contains(text(),'Login')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.133357" elapsed="0.617314"/>
+</kw>
+<arg>${login_locator.btn_login}</arg>
+<status status="PASS" start="2025-05-30T11:34:51.120495" elapsed="0.630262"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:51.120203" elapsed="0.630599"/>
+</kw>
+<kw name="secure_area_page.Verify popup login success should be visible" owner="secure_area_page">
+<kw name="Click element after replace string in locator" owner="common">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:34:51.752455" level="INFO">${replace_string} = //div[@class='flash success' and contains(text(),'You logged into a secure area!')]</msg>
+<var>${replace_string}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.752292" elapsed="0.000187"/>
+</kw>
+<kw name="Click element when element is visble" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.752812" elapsed="0.011006"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:34:51.764140" level="INFO">Clicking element '//div[@class='flash success' and contains(text(),'You logged into a secure area!')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.763971" elapsed="0.036467"/>
+</kw>
+<arg>${replace_string}</arg>
+<status status="PASS" start="2025-05-30T11:34:51.752613" elapsed="0.047909"/>
+</kw>
+<arg>${common_locator.lbl_alert_message}</arg>
+<arg>${secure_page.popup_login}</arg>
+<doc>This keyword will replace ***string*** with ${string} and then verify element is visible</doc>
+<status status="PASS" start="2025-05-30T11:34:51.751710" elapsed="0.048892"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:51.751144" elapsed="0.049494"/>
+</kw>
+<kw name="secure_area_page.Click logout button" owner="secure_area_page">
+<kw name="Click element when element is visble" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.802694" elapsed="0.012598"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:34:51.815656" level="INFO">Clicking element 'xpath=//i[contains(text(),'Logout')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:34:51.815445" elapsed="0.618108"/>
+</kw>
+<arg>${secure_locator.btn_logout}</arg>
+<status status="PASS" start="2025-05-30T11:34:51.801900" elapsed="0.631738"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:51.801176" elapsed="0.632502"/>
+</kw>
+<kw name="Verify popup logout success should be visible" owner="login_page">
+<kw name="Verify element is visible after replace string in locator" owner="common">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:34:52.435562" level="INFO">${replace_string} = //div[@class='flash success' and contains(text(),'You logged out of the secure area!')]</msg>
+<var>${replace_string}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:34:52.435395" elapsed="0.000195"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${replace_string}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:52.435838" elapsed="0.017696"/>
+</kw>
+<arg>${common_locator.lbl_alert_message}</arg>
+<arg>${login_page.popup_logout}</arg>
+<doc>This keyword will replace ***string*** with ${string} and then verify element is visible</doc>
+<status status="PASS" start="2025-05-30T11:34:52.434749" elapsed="0.018945"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:52.434008" elapsed="0.019782"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-30T11:34:52.454128" elapsed="2.213000"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:45.392744" elapsed="9.274759"/>
+</test>
+<status status="PASS" start="2025-05-30T11:34:44.883711" elapsed="9.784284"/>
+</suite>
+<suite id="s1-s2" name="Test-Assigment2 02" source="G:\test-assigment\test-assignment\robotframework\testcases\web\test-assigment2_02.robot">
+<test id="s1-s2-t1" name="TC01 Login successful with invalid password" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-30T11:34:54.678756" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>url=${test_web_url}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-30T11:34:54.678591" elapsed="4.576908"/>
+</kw>
+<kw name="Verify login page is loaded and visible" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_locator.lbl_login_page}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.256814" elapsed="0.015543"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_locator.lbl_login_form}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.272682" elapsed="0.011294"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:59.256118" elapsed="0.027943"/>
+</kw>
+<kw name="Input username" owner="login_page">
+<kw name="Input text to element when element is visible" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.285125" elapsed="0.010794"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:34:59.296282" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>${locator}</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.296086" elapsed="0.068503"/>
+</kw>
+<arg>${login_locator.txt_username}</arg>
+<arg>${username}</arg>
+<doc>This keyword will be use for input text to an element that need sometime to load
+To prevent flaky by robot trying to input</doc>
+<status status="PASS" start="2025-05-30T11:34:59.284761" elapsed="0.079948"/>
+</kw>
+<arg>${TC02.username}</arg>
+<status status="PASS" start="2025-05-30T11:34:59.284276" elapsed="0.080503"/>
+</kw>
+<kw name="Input password" owner="login_page">
+<kw name="Input text to element when element is visible" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.366097" elapsed="0.010625"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:34:59.377066" level="INFO">Typing text 'Password!' into text field 'id=password'.</msg>
+<arg>${locator}</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.376878" elapsed="0.049748"/>
+</kw>
+<arg>${login_locator.txt_password}</arg>
+<arg>${password}</arg>
+<doc>This keyword will be use for input text to an element that need sometime to load
+To prevent flaky by robot trying to input</doc>
+<status status="PASS" start="2025-05-30T11:34:59.365683" elapsed="0.061031"/>
+</kw>
+<arg>${TC02.password}</arg>
+<status status="PASS" start="2025-05-30T11:34:59.365042" elapsed="0.061717"/>
+</kw>
+<kw name="Click login button" owner="login_page">
+<kw name="Click element when element is visble" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.427714" elapsed="0.011530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:34:59.439576" level="INFO">Clicking element 'xpath=//button/i[contains(text(),'Login')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.439412" elapsed="0.064256"/>
+</kw>
+<arg>${login_locator.btn_login}</arg>
+<status status="PASS" start="2025-05-30T11:34:59.427323" elapsed="0.076436"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:59.427018" elapsed="0.076783"/>
+</kw>
+<kw name="Verify popup password invalid should be visible" owner="login_page">
+<kw name="Verify element is visible after replace string in locator" owner="common">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:34:59.506223" level="INFO">${replace_string} = //div[@class='flash error' and contains(text(),'Your password is invalid!')]</msg>
+<var>${replace_string}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.506067" elapsed="0.000183"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${replace_string}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:59.506426" elapsed="0.558039"/>
+</kw>
+<arg>${common_locator.lbl_alert_error_message}</arg>
+<arg>${login_page.popup_invalid_password}</arg>
+<doc>This keyword will replace ***string*** with ${string} and then verify element is visible</doc>
+<status status="PASS" start="2025-05-30T11:34:59.505275" elapsed="0.559270"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:59.504212" elapsed="0.560374"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-30T11:35:00.064882" elapsed="2.186572"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:54.678287" elapsed="7.573393"/>
+</test>
+<status status="PASS" start="2025-05-30T11:34:54.668519" elapsed="7.584082"/>
+</suite>
+<suite id="s1-s3" name="Test-Assigment2 03" source="G:\test-assigment\test-assignment\robotframework\testcases\web\test-assigment2_03.robot">
+<test id="s1-s3-t1" name="TC01 Login successful with invalid username password" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-30T11:35:02.263498" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>url=${test_web_url}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-30T11:35:02.263341" elapsed="4.631509"/>
+</kw>
+<kw name="Verify login page is loaded and visible" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_locator.lbl_login_page}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:35:06.895744" elapsed="0.016827"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_locator.lbl_login_form}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:35:06.912993" elapsed="0.010915"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:35:06.895374" elapsed="0.028618"/>
+</kw>
+<kw name="Input username" owner="login_page">
+<kw name="Input text to element when element is visible" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:35:06.925280" elapsed="0.010239"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:35:06.935861" level="INFO">Typing text 'tomholland' into text field 'id=username'.</msg>
+<arg>${locator}</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:35:06.935675" elapsed="0.057687"/>
+</kw>
+<arg>${login_locator.txt_username}</arg>
+<arg>${username}</arg>
+<doc>This keyword will be use for input text to an element that need sometime to load
+To prevent flaky by robot trying to input</doc>
+<status status="PASS" start="2025-05-30T11:35:06.924869" elapsed="0.068577"/>
+</kw>
+<arg>${TC03.username}</arg>
+<status status="PASS" start="2025-05-30T11:35:06.924231" elapsed="0.069257"/>
+</kw>
+<kw name="Input password" owner="login_page">
+<kw name="Input text to element when element is visible" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:35:06.994718" elapsed="0.011305"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:35:07.006384" level="INFO">Typing text 'Password!' into text field 'id=password'.</msg>
+<arg>${locator}</arg>
+<arg>${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:35:07.006183" elapsed="0.056135"/>
+</kw>
+<arg>${login_locator.txt_password}</arg>
+<arg>${password}</arg>
+<doc>This keyword will be use for input text to an element that need sometime to load
+To prevent flaky by robot trying to input</doc>
+<status status="PASS" start="2025-05-30T11:35:06.994358" elapsed="0.068094"/>
+</kw>
+<arg>${TC03.password}</arg>
+<status status="PASS" start="2025-05-30T11:35:06.993851" elapsed="0.068651"/>
+</kw>
+<kw name="Click login button" owner="login_page">
+<kw name="Click element when element is visble" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:35:07.063726" elapsed="0.012004"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T11:35:07.076355" level="INFO">Clicking element 'xpath=//button/i[contains(text(),'Login')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T11:35:07.075909" elapsed="0.593421"/>
+</kw>
+<arg>${login_locator.btn_login}</arg>
+<status status="PASS" start="2025-05-30T11:35:07.062980" elapsed="0.606442"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:35:07.062768" elapsed="0.606696"/>
+</kw>
+<kw name="Verify popup username invalid should be visible" owner="login_page">
+<kw name="Verify element is visible after replace string in locator" owner="common">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:35:07.671036" level="INFO">${replace_string} = //div[@class='flash error' and contains(text(),'Your username is invalid!')]</msg>
+<var>${replace_string}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:35:07.670910" elapsed="0.000153"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${replace_string}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:35:07.671157" elapsed="0.037515"/>
+</kw>
+<arg>${common_locator.lbl_alert_error_message}</arg>
+<arg>${login_page.popup_invalid_username}</arg>
+<doc>This keyword will replace ***string*** with ${string} and then verify element is visible</doc>
+<status status="PASS" start="2025-05-30T11:35:07.670417" elapsed="0.038514"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:35:07.669768" elapsed="0.039250"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-30T11:35:07.709465" elapsed="2.199750"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:35:02.263051" elapsed="7.646396"/>
+</test>
+<status status="PASS" start="2025-05-30T11:35:02.253251" elapsed="7.656764"/>
+</suite>
+<status status="PASS" start="2025-05-30T11:34:44.865341" elapsed="25.045228"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Web" id="s1" pass="3" fail="0" skip="0">Web</stat>
+<stat name="Test-Assigment2 01" id="s1-s1" pass="1" fail="0" skip="0">Web.Test-Assigment2 01</stat>
+<stat name="Test-Assigment2 02" id="s1-s2" pass="1" fail="0" skip="0">Web.Test-Assigment2 02</stat>
+<stat name="Test-Assigment2 03" id="s1-s3" pass="1" fail="0" skip="0">Web.Test-Assigment2 03</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

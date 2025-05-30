@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-30T11:33:16.211305" rpa="false" schemaversion="5">
+<suite id="s1" name="Mobile" source="G:\test-assigment\test-assignment\robotframework\testcases\mobile">
+<suite id="s1-s1" name="Test Assigment4 01" source="G:\test-assigment\test-assignment\robotframework\testcases\mobile\test_assigment4_01.robot">
+<test id="s1-s1-t1" name="TC01 Verify can create note" line="7">
+<kw name="Open Application" owner="AppiumLibrary" type="SETUP">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>unicodeKeyboard=${TRUE}</arg>
+<arg>resetKeyboard=${TRUE}</arg>
+<arg>app=${APP}</arg>
+<arg>noReset=${FALSE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-05-30T11:33:16.744606" elapsed="5.443851"/>
+</kw>
+<kw name="Verify page is home page" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:22.975224" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/myCoordinatorLayout</msg>
+<arg>${home_mobile.lbl_home_page}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:22.189109" elapsed="0.786188"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:22.188869" elapsed="0.786516"/>
+</kw>
+<kw name="Tap add note button" owner="home_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:22.998182" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:22.976325" elapsed="0.021923"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:22.998413" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:23.150051" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:22.998377" elapsed="0.151740"/>
+</kw>
+<arg>${home_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:22.975914" elapsed="0.174279"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:22.975661" elapsed="0.174572"/>
+</kw>
+<kw name="Add note title" owner="add_note_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:24.198485" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:23.151076" elapsed="1.047473"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:24.199602" level="INFO">Clear text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:24.226353" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:24.198689" elapsed="0.027731"/>
+</kw>
+<kw name="Input text to element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:24.747079" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:24.227147" elapsed="0.519995"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:24.748047" level="INFO">Typing text 'TestNote01' into text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:24.772370" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:24.747294" elapsed="0.025155"/>
+</kw>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-05-30T11:33:24.226599" elapsed="0.545944"/>
+</kw>
+<arg>${mobile_data.TC01.title}</arg>
+<status status="PASS" start="2025-05-30T11:33:23.150619" elapsed="1.621977"/>
+</kw>
+<kw name="Click add button" owner="add_note_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:25.293764" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:24.773515" elapsed="0.520312"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:25.293986" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:25.434451" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:25.293953" elapsed="0.140575"/>
+</kw>
+<arg>${add_note_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:24.773121" elapsed="0.661480"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:24.772883" elapsed="0.661758"/>
+</kw>
+<kw name="Verify note should be visible" owner="home_page">
+<kw name="Verify element is visible with replace String" owner="common_mobile">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:33:25.436060" level="INFO">${new_locator} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote01']</msg>
+<var>${new_locator}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:33:25.435911" elapsed="0.000181"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:26.166103" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote01']</msg>
+<arg>${new_locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:25.436190" elapsed="0.729977"/>
+</kw>
+<arg>${home_mobile.lbl_note_title}</arg>
+<arg>${note_title}</arg>
+<status status="PASS" start="2025-05-30T11:33:25.435477" elapsed="0.730758"/>
+</kw>
+<arg>${mobile_data.TC01.title}</arg>
+<status status="PASS" start="2025-05-30T11:33:25.434964" elapsed="0.731315"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-05-30T11:33:26.166538" elapsed="0.250680"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:16.744066" elapsed="9.673493"/>
+</test>
+<status status="PASS" start="2025-05-30T11:33:16.230331" elapsed="10.188180"/>
+</suite>
+<suite id="s1-s2" name="Test Assigment4 02" source="G:\test-assigment\test-assignment\robotframework\testcases\mobile\test_assigment4_02.robot">
+<test id="s1-s2-t1" name="TC02 Verify cannot create note with empty title" line="7">
+<kw name="Open Application" owner="AppiumLibrary" type="SETUP">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>unicodeKeyboard=${TRUE}</arg>
+<arg>resetKeyboard=${TRUE}</arg>
+<arg>app=${APP}</arg>
+<arg>noReset=${FALSE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-05-30T11:33:26.430658" elapsed="5.446500"/>
+</kw>
+<kw name="Verify page is home page" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:32.969081" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/myCoordinatorLayout</msg>
+<arg>${home_mobile.lbl_home_page}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:31.877687" elapsed="1.091473"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:31.877484" elapsed="1.091752"/>
+</kw>
+<kw name="Tap add note button" owner="home_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:32.998056" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:32.970221" elapsed="0.027900"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:32.998334" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:33.169421" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:32.998262" elapsed="0.171226"/>
+</kw>
+<arg>${home_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:32.969802" elapsed="0.199771"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:32.969507" elapsed="0.200102"/>
+</kw>
+<kw name="Add note title" owner="add_note_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:34.299893" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:33.170382" elapsed="1.129576"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:34.301002" level="INFO">Clear text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:34.328107" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:34.300084" elapsed="0.028103"/>
+</kw>
+<kw name="Input text to element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:34.836952" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:34.328820" elapsed="0.508197"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:34.837927" level="INFO">Typing text '' into text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:34.865021" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:34.837157" elapsed="0.027927"/>
+</kw>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-05-30T11:33:34.328364" elapsed="0.536788"/>
+</kw>
+<arg>${mobile_data.TC02.title}</arg>
+<status status="PASS" start="2025-05-30T11:33:33.169904" elapsed="1.695290"/>
+</kw>
+<kw name="Click add button" owner="add_note_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:35.395027" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:34.866047" elapsed="0.529042"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:35.395251" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:35.543005" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:35.395212" elapsed="0.147948"/>
+</kw>
+<arg>${add_note_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:34.865668" elapsed="0.677652"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:34.865458" elapsed="0.677966"/>
+</kw>
+<kw name="Verify there is no note" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:36.349004" level="INFO">xpath criteria: //android.widget.TextView[@text="You don't have any todos"]</msg>
+<arg>${home_mobile.lbl_no_note}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:35.544655" elapsed="0.804564"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:35.544433" elapsed="0.804903"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-05-30T11:33:36.349590" elapsed="0.266634"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:26.430318" elapsed="10.186219"/>
+</test>
+<status status="PASS" start="2025-05-30T11:33:26.419492" elapsed="10.197808"/>
+</suite>
+<suite id="s1-s3" name="Test Assigment4 03" source="G:\test-assigment\test-assignment\robotframework\testcases\mobile\test_assigment4_03.robot">
+<test id="s1-s3-t1" name="TC03 Verify can edit note" line="7">
+<kw name="Open Application" owner="AppiumLibrary" type="SETUP">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>unicodeKeyboard=${TRUE}</arg>
+<arg>resetKeyboard=${TRUE}</arg>
+<arg>app=${APP}</arg>
+<arg>noReset=${FALSE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-05-30T11:33:36.637703" elapsed="5.477772"/>
+</kw>
+<kw name="Verify page is home page" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:43.229883" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/myCoordinatorLayout</msg>
+<arg>${home_mobile.lbl_home_page}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:42.116070" elapsed="1.113887"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:42.115852" elapsed="1.114179"/>
+</kw>
+<kw name="Tap add note button" owner="home_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:43.251392" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:43.230975" elapsed="0.020481"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:43.251633" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:43.397876" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:43.251600" elapsed="0.146341"/>
+</kw>
+<arg>${home_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:43.230522" elapsed="0.167486"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:43.230288" elapsed="0.167756"/>
+</kw>
+<kw name="Add note title" owner="add_note_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:44.531164" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:43.398872" elapsed="1.132398"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:44.533139" level="INFO">Clear text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:44.562973" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:44.531480" elapsed="0.031557"/>
+</kw>
+<kw name="Input text to element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:45.081234" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:44.563643" elapsed="0.517652"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:45.082201" level="INFO">Typing text 'TestNote03' into text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:45.108549" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:45.081444" elapsed="0.027167"/>
+</kw>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-05-30T11:33:44.563196" elapsed="0.545483"/>
+</kw>
+<arg>${mobile_data.TC03.title}</arg>
+<status status="PASS" start="2025-05-30T11:33:43.398303" elapsed="1.710414"/>
+</kw>
+<kw name="Click add button" owner="add_note_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:45.628221" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:45.109627" elapsed="0.518660"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:45.628449" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:45.768942" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:45.628419" elapsed="0.140585"/>
+</kw>
+<arg>${add_note_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:45.109204" elapsed="0.659868"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:45.108973" elapsed="0.660135"/>
+</kw>
+<kw name="Verify note should be visible" owner="home_page">
+<kw name="Verify element is visible with replace String" owner="common_mobile">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:33:45.770383" level="INFO">${new_locator} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote03']</msg>
+<var>${new_locator}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:33:45.770255" elapsed="0.000151"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:46.701817" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote03']</msg>
+<arg>${new_locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:45.770503" elapsed="0.931379"/>
+</kw>
+<arg>${home_mobile.lbl_note_title}</arg>
+<arg>${note_title}</arg>
+<status status="PASS" start="2025-05-30T11:33:45.769873" elapsed="0.932080"/>
+</kw>
+<arg>${mobile_data.TC03.title}</arg>
+<status status="PASS" start="2025-05-30T11:33:45.769374" elapsed="0.932619"/>
+</kw>
+<kw name="Tap note by note title" owner="home_page">
+<kw name="Tap element is visible with replace String" owner="common_mobile">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:33:46.703269" level="INFO">${new_locator} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote03']</msg>
+<var>${new_locator}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:33:46.703150" elapsed="0.000139"/>
+</kw>
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:46.746913" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote03']</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:46.703549" elapsed="0.043425"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:46.747145" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:47.491611" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote03']</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:46.747112" elapsed="0.744611"/>
+</kw>
+<arg>${new_locator}</arg>
+<status status="PASS" start="2025-05-30T11:33:46.703390" elapsed="0.788416"/>
+</kw>
+<arg>${home_mobile.lbl_note_title}</arg>
+<arg>${note_title}</arg>
+<status status="PASS" start="2025-05-30T11:33:46.702780" elapsed="0.789066"/>
+</kw>
+<arg>${mobile_data.TC03.title}</arg>
+<status status="PASS" start="2025-05-30T11:33:46.702260" elapsed="0.789621"/>
+</kw>
+<kw name="Add note title" owner="add_note_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:48.461991" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:47.492613" elapsed="0.969452"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:48.463107" level="INFO">Clear text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:48.481438" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:48.462190" elapsed="0.019310"/>
+</kw>
+<kw name="Input text to element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:48.997185" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:48.482128" elapsed="0.515119"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:48.998140" level="INFO">Typing text 'New_TestNote03' into text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:49.023837" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:48.997374" elapsed="0.026525"/>
+</kw>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-05-30T11:33:48.481675" elapsed="0.542307"/>
+</kw>
+<arg>${mobile_data.TC03.new_title}</arg>
+<status status="PASS" start="2025-05-30T11:33:47.492158" elapsed="1.531862"/>
+</kw>
+<kw name="Click add button" owner="add_note_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:49.530996" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:49.024894" elapsed="0.506167"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:49.531218" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:49.673683" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:49.531187" elapsed="0.142556"/>
+</kw>
+<arg>${add_note_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:49.024504" elapsed="0.649304"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:49.024288" elapsed="0.649556"/>
+</kw>
+<kw name="Verify note should be visible" owner="home_page">
+<kw name="Verify element is visible with replace String" owner="common_mobile">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:33:49.675032" level="INFO">${new_locator} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='New_TestNote03']</msg>
+<var>${new_locator}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:33:49.674916" elapsed="0.000138"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:50.446881" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='New_TestNote03']
+xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='New_TestNote03']</msg>
+<arg>${new_locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:49.675145" elapsed="0.771800"/>
+</kw>
+<arg>${home_mobile.lbl_note_title}</arg>
+<arg>${note_title}</arg>
+<status status="PASS" start="2025-05-30T11:33:49.674565" elapsed="0.772452"/>
+</kw>
+<arg>${mobile_data.TC03.new_title}</arg>
+<status status="PASS" start="2025-05-30T11:33:49.674100" elapsed="0.772959"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-05-30T11:33:50.447299" elapsed="0.241514"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:36.637194" elapsed="14.051803"/>
+</test>
+<status status="PASS" start="2025-05-30T11:33:36.618221" elapsed="14.071469"/>
+</suite>
+<suite id="s1-s4" name="Test Assigment4 04" source="G:\test-assigment\test-assignment\robotframework\testcases\mobile\test_assigment4_04.robot">
+<test id="s1-s4-t1" name="TC03 Verify cannot edit note with empty title" line="7">
+<kw name="Open Application" owner="AppiumLibrary" type="SETUP">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>unicodeKeyboard=${TRUE}</arg>
+<arg>resetKeyboard=${TRUE}</arg>
+<arg>app=${APP}</arg>
+<arg>noReset=${FALSE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-05-30T11:33:50.701391" elapsed="5.404281"/>
+</kw>
+<kw name="Verify page is home page" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:57.240746" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/myCoordinatorLayout</msg>
+<arg>${home_mobile.lbl_home_page}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:56.106193" elapsed="1.134627"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:56.105994" elapsed="1.134901"/>
+</kw>
+<kw name="Tap add note button" owner="home_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:57.264615" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:57.241724" elapsed="0.022958"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:57.264940" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:57.415199" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:57.264904" elapsed="0.150382"/>
+</kw>
+<arg>${home_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:57.241328" elapsed="0.174053"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:57.241127" elapsed="0.174310"/>
+</kw>
+<kw name="Add note title" owner="add_note_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:58.541133" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:57.416368" elapsed="1.124827"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:58.542229" level="INFO">Clear text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:58.568038" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:58.541317" elapsed="0.026788"/>
+</kw>
+<kw name="Input text to element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:59.073945" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:58.568713" elapsed="0.505295"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:59.074929" level="INFO">Typing text 'TestNote04' into text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:33:59.098818" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:33:59.074132" elapsed="0.024751"/>
+</kw>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-05-30T11:33:58.568277" elapsed="0.530676"/>
+</kw>
+<arg>${mobile_data.TC04.title}</arg>
+<status status="PASS" start="2025-05-30T11:33:57.415824" elapsed="1.683190"/>
+</kw>
+<kw name="Click add button" owner="add_note_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:59.627100" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:59.099901" elapsed="0.527315"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:33:59.627390" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:59.765202" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:33:59.627362" elapsed="0.137905"/>
+</kw>
+<arg>${add_note_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:33:59.099501" elapsed="0.665831"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:59.099277" elapsed="0.666092"/>
+</kw>
+<kw name="Verify note should be visible" owner="home_page">
+<kw name="Verify element is visible with replace String" owner="common_mobile">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:33:59.766599" level="INFO">${new_locator} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']</msg>
+<var>${new_locator}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:33:59.766480" elapsed="0.000141"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:01.488159" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']
+xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']</msg>
+<arg>${new_locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:33:59.766717" elapsed="1.721509"/>
+</kw>
+<arg>${home_mobile.lbl_note_title}</arg>
+<arg>${note_title}</arg>
+<status status="PASS" start="2025-05-30T11:33:59.766102" elapsed="1.722204"/>
+</kw>
+<arg>${mobile_data.TC04.title}</arg>
+<status status="PASS" start="2025-05-30T11:33:59.765626" elapsed="1.722720"/>
+</kw>
+<kw name="Tap note by note title" owner="home_page">
+<kw name="Tap element is visible with replace String" owner="common_mobile">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:34:01.489638" level="INFO">${new_locator} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']</msg>
+<var>${new_locator}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:34:01.489501" elapsed="0.000159"/>
+</kw>
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:01.526916" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:01.489909" elapsed="0.037071"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:01.527132" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:34:01.684159" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:34:01.527103" elapsed="0.157153"/>
+</kw>
+<arg>${new_locator}</arg>
+<status status="PASS" start="2025-05-30T11:34:01.489766" elapsed="0.194560"/>
+</kw>
+<arg>${home_mobile.lbl_note_title}</arg>
+<arg>${note_title}</arg>
+<status status="PASS" start="2025-05-30T11:34:01.489115" elapsed="0.195252"/>
+</kw>
+<arg>${mobile_data.TC04.title}</arg>
+<status status="PASS" start="2025-05-30T11:34:01.488620" elapsed="0.195781"/>
+</kw>
+<kw name="Add note title" owner="add_note_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:02.668999" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:01.685168" elapsed="0.983898"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:02.670424" level="INFO">Clear text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:34:02.697250" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:34:02.669336" elapsed="0.027977"/>
+</kw>
+<kw name="Input text to element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:03.214736" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:02.697954" elapsed="0.516845"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:03.215676" level="INFO">Typing text '' into text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:34:03.239782" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:34:03.214926" elapsed="0.024918"/>
+</kw>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-05-30T11:34:02.697489" elapsed="0.542423"/>
+</kw>
+<arg>${mobile_data.TC04.new_title}</arg>
+<status status="PASS" start="2025-05-30T11:34:01.684678" elapsed="1.555271"/>
+</kw>
+<kw name="Click add button" owner="add_note_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:03.761829" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:03.240915" elapsed="0.520978"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:03.762051" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:34:03.901002" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:34:03.762021" elapsed="0.139055"/>
+</kw>
+<arg>${add_note_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:34:03.240530" elapsed="0.660615"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:03.240219" elapsed="0.660966"/>
+</kw>
+<kw name="Verify note should be visible" owner="home_page">
+<kw name="Verify element is visible with replace String" owner="common_mobile">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:34:03.902560" level="INFO">${new_locator} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']</msg>
+<var>${new_locator}</var>
+<arg>${locator}</arg>
+<arg>***string***</arg>
+<arg>${string}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:34:03.902405" elapsed="0.000187"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:04.731913" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']
+xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote04']</msg>
+<arg>${new_locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:03.902694" elapsed="0.829283"/>
+</kw>
+<arg>${home_mobile.lbl_note_title}</arg>
+<arg>${note_title}</arg>
+<status status="PASS" start="2025-05-30T11:34:03.901948" elapsed="0.830100"/>
+</kw>
+<arg>${mobile_data.TC04.title}</arg>
+<status status="PASS" start="2025-05-30T11:34:03.901454" elapsed="0.830637"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-05-30T11:34:04.732373" elapsed="0.229432"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:33:50.701061" elapsed="14.260911"/>
+</test>
+<status status="PASS" start="2025-05-30T11:33:50.690659" elapsed="14.271719"/>
+</suite>
+<suite id="s1-s5" name="Test Assigment4 05" source="G:\test-assigment\test-assignment\robotframework\testcases\mobile\test_assigment4_05.robot">
+<test id="s1-s5-t1" name="TC02 Verify can delete note" line="7">
+<kw name="Open Application" owner="AppiumLibrary" type="SETUP">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>unicodeKeyboard=${TRUE}</arg>
+<arg>resetKeyboard=${TRUE}</arg>
+<arg>app=${APP}</arg>
+<arg>noReset=${FALSE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-05-30T11:34:04.974687" elapsed="5.537470"/>
+</kw>
+<kw name="Verify page is home page" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:11.593672" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/myCoordinatorLayout</msg>
+<arg>${home_mobile.lbl_home_page}</arg>
+<arg>timeout=${GLOBAL_TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:10.512706" elapsed="1.081029"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:10.512497" elapsed="1.081310"/>
+</kw>
+<kw name="Tap add note button" owner="home_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:11.624365" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:11.594801" elapsed="0.029628"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:11.624648" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:34:11.776271" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:34:11.624617" elapsed="0.151716"/>
+</kw>
+<arg>${home_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:34:11.594356" elapsed="0.182046"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:11.594038" elapsed="0.182399"/>
+</kw>
+<kw name="Add note title" owner="add_note_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:12.942275" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:11.777150" elapsed="1.165283"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:12.943495" level="INFO">Clear text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:34:12.970806" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:34:12.942564" elapsed="0.028350"/>
+</kw>
+<kw name="Input text to element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:13.486467" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:12.971672" elapsed="0.514863"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:13.487459" level="INFO">Typing text 'TestNote05' into text field 'id=com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-05-30T11:34:13.512301" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-30T11:34:13.486663" elapsed="0.025709"/>
+</kw>
+<arg>${add_note_mobile.txt_note_title}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-05-30T11:34:12.971119" elapsed="0.541323"/>
+</kw>
+<arg>${mobile_data.TC05.title}</arg>
+<status status="PASS" start="2025-05-30T11:34:11.776683" elapsed="1.735798"/>
+</kw>
+<kw name="Click add button" owner="add_note_page">
+<kw name="Tap element when visible" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:14.024895" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:13.513362" elapsed="0.511596"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:14.025114" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:34:14.170049" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>${locator}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-05-30T11:34:14.025084" elapsed="0.145030"/>
+</kw>
+<arg>${add_note_mobile.btn_add_note}</arg>
+<status status="PASS" start="2025-05-30T11:34:13.512974" elapsed="0.657210"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:13.512752" elapsed="0.657478"/>
+</kw>
+<kw name="Delete note by swipe left" owner="home_page">
+<kw name="Replace String" owner="String">
+<msg time="2025-05-30T11:34:14.171312" level="INFO">${new_locator} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote05']</msg>
+<var>${new_locator}</var>
+<arg>${home_mobile.lbl_note_title}</arg>
+<arg>***string***</arg>
+<arg>${note_title}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-30T11:34:14.170990" elapsed="0.000355"/>
+</kw>
+<kw name="Swipe element from relative position" owner="common_mobile">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:15.099629" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote05']
+xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote05']</msg>
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:14.171633" elapsed="0.928060"/>
+</kw>
+<kw name="Get Element Location" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:15.734505" level="INFO">Element 'xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote05']' location: {'x': 270, 'y': 354} </msg>
+<msg time="2025-05-30T11:34:15.734564" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote05']</msg>
+<msg time="2025-05-30T11:34:15.734614" level="INFO">${location} = {'x': 270, 'y': 354}</msg>
+<var>${location}</var>
+<arg>${locator}</arg>
+<doc>Get element location</doc>
+<status status="PASS" start="2025-05-30T11:34:15.099821" elapsed="0.634809"/>
+</kw>
+<kw name="Get Element Size" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:15.785215" level="INFO">Element 'xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote05']' size: {'height': 76, 'width': 1170} </msg>
+<msg time="2025-05-30T11:34:15.785282" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text='TestNote05']</msg>
+<msg time="2025-05-30T11:34:15.785336" level="INFO">${size} = {'height': 76, 'width': 1170}</msg>
+<var>${size}</var>
+<arg>${locator}</arg>
+<doc>Get element size</doc>
+<status status="PASS" start="2025-05-30T11:34:15.734758" elapsed="0.050594"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-30T11:34:15.785833" level="INFO">${width} = 585.0</msg>
+<var>${width}</var>
+<arg>${size}[width]/2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-30T11:34:15.785597" elapsed="0.000264"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-30T11:34:15.786119" level="INFO">${height} = 38.0</msg>
+<var>${height}</var>
+<arg>${size}[height]/2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-30T11:34:15.785976" elapsed="0.000161"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-30T11:34:15.786347" level="INFO">${start_x} = 855.0</msg>
+<var>${start_x}</var>
+<arg>${location}[x] + ${width}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-30T11:34:15.786222" elapsed="0.000142"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-30T11:34:15.786548" level="INFO">${start_y} = 392.0</msg>
+<var>${start_y}</var>
+<arg>${location}[y] + ${height}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-30T11:34:15.786436" elapsed="0.000128"/>
+</kw>
+<kw name="Swipe" owner="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${location}[x]</arg>
+<arg>${start_y}</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" start="2025-05-30T11:34:15.786633" elapsed="1.309379"/>
+</kw>
+<arg>${new_locator}</arg>
+<status status="PASS" start="2025-05-30T11:34:14.171476" elapsed="2.924756"/>
+</kw>
+<arg>${mobile_data.TC05.title}</arg>
+<status status="PASS" start="2025-05-30T11:34:14.170519" elapsed="2.925759"/>
+</kw>
+<kw name="Verify there is no note" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-30T11:34:18.095420" level="INFO">xpath criteria: //android.widget.TextView[@text="You don't have any todos"]</msg>
+<arg>${home_mobile.lbl_no_note}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-30T11:34:17.097038" elapsed="0.998442"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:17.096827" elapsed="0.998767"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-05-30T11:34:18.095867" elapsed="0.237724"/>
+</kw>
+<status status="PASS" start="2025-05-30T11:34:04.974322" elapsed="13.359437"/>
+</test>
+<status status="PASS" start="2025-05-30T11:34:04.962825" elapsed="13.371376"/>
+</suite>
+<status status="PASS" start="2025-05-30T11:33:16.212410" elapsed="62.122522"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Mobile" id="s1" pass="5" fail="0" skip="0">Mobile</stat>
+<stat name="Test Assigment4 01" id="s1-s1" pass="1" fail="0" skip="0">Mobile.Test Assigment4 01</stat>
+<stat name="Test Assigment4 02" id="s1-s2" pass="1" fail="0" skip="0">Mobile.Test Assigment4 02</stat>
+<stat name="Test Assigment4 03" id="s1-s3" pass="1" fail="0" skip="0">Mobile.Test Assigment4 03</stat>
+<stat name="Test Assigment4 04" id="s1-s4" pass="1" fail="0" skip="0">Mobile.Test Assigment4 04</stat>
+<stat name="Test Assigment4 05" id="s1-s5" pass="1" fail="0" skip="0">Mobile.Test Assigment4 05</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-30T11:33:22.998413" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:25.293986" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:32.998334" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:35.395251" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:43.251633" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:45.628449" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:46.747145" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:49.531218" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:57.264940" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:33:59.627390" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:34:01.527132" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:34:03.762051" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:34:11.624648" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-05-30T11:34:14.025114" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+</errors>
+</robot>

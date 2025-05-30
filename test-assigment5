@@ -1,0 +1,28 @@
+pipeline {
+    agent { label 'master' }
+    
+    stages {
+        stage('Checkout code from GIT'){
+            checkout scmGit(
+                branches: [[name: 'master']],
+                userRemoteConfigs: [[url: 'https://github.com/jenkinsci/git-plugin.git']])
+        }
+        
+        stage('Run test automate'){
+            sh "python3 -m robot -d testResult ./robotframework/testcases/."
+        }
+
+        stage('Send Result to jenkins'){
+            robot(outputPath: "./testResult",
+            passThreshold: 90.0,
+            unstableThreshold: 70.0,
+            disableArchiveOutput: true,
+            outputFileName: "output.xml",
+            logFileName: 'log.html',
+            reportFileName: 'report.html',
+            countSkippedTests: true,    // Optional, defaults to false
+            otherFiles: 'screenshot-*.png'
+        )
+        }
+    }
+}

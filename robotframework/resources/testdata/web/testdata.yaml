@@ -1,0 +1,11 @@
+TC01:
+  username: tomsmith
+  password: SuperSecretPassword!
+
+TC02:
+  username: tomsmith
+  password: Password!
+
+TC03:
+  username: tomholland
+  password: Password!
